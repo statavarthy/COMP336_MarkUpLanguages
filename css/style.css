@@ -21,13 +21,12 @@
 	margin-right: 10%;
 	margin-left: 10%;
 	width: 200%;
-  background-color: white;  
  }
 
 #content{
   position: fixed;
   top: 10%;
-  left: 35%;
+  left: 30%;
   max-width: 100%;
   margin-top: 10px !important;
   overflow: hidden;
@@ -35,23 +34,26 @@
 .inputStyle{
   border-radius: 5px;
   margin: 0px;
-	height: 30px;
+	height: 50px;
 	font-size: 0.667em;
 	border: 1px solid #E6E6E6;
-	width:400%;
+	width:300%;
 }
 
 .divStyle{
-  font-size: 2.2em;
+  text-align: center;
+  font-size: 3.2em;
+  font-weight: bold;
+  font-family: calibri;
   color: black;
   margin-top: 10px!important;
   position: relative;
-  top:20%;
+  top:50%;
 }
 
 
 .buttonStyle{
-        width: 80%;
+      width: 300%;
       margin: 15px 0 15px 1px;
       height: 50px;
       border-radius: 0px;
@@ -59,4 +61,18 @@
       color: #FFF;
       border: medium none;
       font-size: 0.667em;
+    }
+
+.span_style {
+      border-radius: 5px;
+      font-size: 0.8em;
+      text-align: center;
+      position: relative;
+      top: 5px;
+      display: block;
+      width: 200px;
+      padding: 7px 10px;
+
+      margin-left: auto;
+      margin-right:auto;
     }

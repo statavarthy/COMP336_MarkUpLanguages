@@ -9,7 +9,7 @@
 <body>
 <div id="container">
         <div id="bg">
-          <img src="images/pic1.jpg" alt="">
+          <img src="images/spices.jpg" alt="">
         </div>
         <div id="content">
             <div class="divStyle"> Find your favorite restaurant near you</div>
@@ -18,12 +18,15 @@
                   <table>
                       <tr>
                         <td><input class ="inputStyle" type="text" id="zipcode" placeholder="Enter zip code of the restaurant area" onclick="resetData('zipcode')"></td>
+                        <span class="span_style">Zip Code not Found</span>
                       </tr>
                       <tr>
                         <td><input class ="inputStyle" type="text" id="cuisine" placeholder="Enter the Cusine" onclick="resetData('cuisine')"></td>
+                        <span class="span_style">Cuisine not Found</span>
                       </tr>
                       <tr>
                         <td><input class ="inputStyle" type="text" id="name" placeholder="Enter the name of the restaurant" onclick="resetData('name')"></td>
+                        <span class="span_style">Restaurant not Found</span>
                       </tr>
                       <tr>
                         <td><input class ="buttonStyle" type="submit" value="GO"></td>
