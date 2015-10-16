@@ -39,8 +39,9 @@
   font-weight: bold;
   font-family: calibri;
   color:white;
-  margin-top: 200px!important;
+  margin-top: 100px!important;
   position: relative;
+  text-shadow: 0 0 15px black; 
 
 }
 
