@@ -14,23 +14,16 @@
   margin: auto;
   min-width: 50%;
   min-height: 50%;
+
 }
 #formStyle{
   position: relative;
   text-align: center;
-	margin-right: 10%;
-	margin-left: 10%;
+	margin-right: 35%;
+	margin-left: 35%;
 	width: 200%;
  }
 
-#content{
-  position: fixed;
-  top: 10%;
-  left: 30%;
-  max-width: 100%;
-  margin-top: 10px !important;
-  overflow: hidden;
-}
 .inputStyle{
   border-radius: 5px;
   margin: 0px;
@@ -45,10 +38,10 @@
   font-size: 3.2em;
   font-weight: bold;
   font-family: calibri;
-  color: black;
-  margin-top: 10px!important;
+  color:white;
+  margin-top: 200px!important;
   position: relative;
-  top:50%;
+
 }
 
 
