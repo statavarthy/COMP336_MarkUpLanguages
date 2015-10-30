@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restaurants>
+	<restaurant>
+		<Name>GOLD COAST DOGS</Name>
+		<Address>159 N WABASH AVE </Address>
+		<Zip>1234</Zip>
+	</restaurant>	
+	<restaurant>
+		<Name>Jewel</Name>
+		<Address>200 W WABASH AVE </Address>
+		<Zip>60602</Zip>
+	</restaurant>	
+	<restaurant>
+		<Name>Mariano</Name>
+		<Address>156 S WABASH AVE </Address>
+		<Zip>123567</Zip>
+	</restaurant>
+</restaurants>	
+
