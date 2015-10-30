@@ -36,5 +36,11 @@
 		<Zip>60601</Zip>
 		<Cuisine>MEXICAN</Cuisine>
 	</restaurant>
+	<restaurant>
+		<Name>Sunshine Cafe</Name>
+		<Address>5449 N Clark St</Address>
+		<Zip>60640</Zip>
+		<Cuisine>Japanese</Cuisine>
+	</restaurant>
 </restaurants>	
 
