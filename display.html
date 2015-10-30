@@ -49,14 +49,19 @@ function myFunction(xml) {
 		 {
 			flag =1;
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
-			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;			
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;	
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;					
 			var element=document.createElement("p");			
 			var rest_Name=document.createTextNode(rName);
-			var rest_Addr=document.createTextNode(rAddress);	
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);				
 			element.appendChild(rest_Name);
 			var br = document.createElement("br");				
 			element.appendChild(br);
-			element.appendChild(rest_Addr);					
+			element.appendChild(rest_Addr);		
+			var br = document.createElement("br");				
+			element.appendChild(br);			
+			element.appendChild(rest_Zip);			
 			document.body.appendChild(element);
 			document.body.appendChild(x);								
 	
@@ -65,16 +70,19 @@ function myFunction(xml) {
 		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase() && dataCuisine=="" && dataZip=="")
 		 {
 			flag =1;
-			alert("Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
+			var rest_Name=document.createTextNode(rName);			
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			element.appendChild(rest_Name);
-			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
+			element.appendChild(rest_Addr);	
+			var br = document.createElement("br");
+			element.appendChild(br);			
 			element.appendChild(rest_Zip);
 			document.body.appendChild(element);
 			document.body.appendChild(x);
@@ -84,19 +92,24 @@ function myFunction(xml) {
 		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase()==dataCuisine.toUpperCase() && dataZip=="" && dataName=="")
 		 {
 			flag =1;
-			alert("Cuisine Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
 			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
+			var rest_Name=document.createTextNode(rName);				
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			var rest_Cuisine=document.createTextNode(rCuisine);
 			element.appendChild(rest_Name);
-			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
+			element.appendChild(rest_Addr);	
+			var br = document.createElement("br");
+			element.appendChild(br);			
 			element.appendChild(rest_Zip);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Cuisine);
 			document.body.appendChild(element);
 			document.body.appendChild(x);
@@ -107,19 +120,24 @@ function myFunction(xml) {
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
 			flag =1;
-			alert("Zip and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
 			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
+			var rest_Name=document.createTextNode(rName);				
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			var rest_Cuisine=document.createTextNode(rCuisine);
 			element.appendChild(rest_Name);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Zip);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Cuisine);
 			document.body.appendChild(element);
 			document.body.appendChild(x);
@@ -129,20 +147,25 @@ function myFunction(xml) {
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
 			flag =1;
-			alert("Cusine and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
 			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
+			var rest_Name=document.createTextNode(rName);			
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			var rest_Cuisine=document.createTextNode(rCuisine);
 			element.appendChild(rest_Name);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Zip);
-			element.appendChild(rest_Cuisine);
+			var br = document.createElement("br");
+			element.appendChild(br);
+			element.appendChild(rest_Cuisine);			
 			document.body.appendChild(element);
 			document.body.appendChild(x);
 			
@@ -152,20 +175,25 @@ function myFunction(xml) {
 		  restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase()==dataZip.toUpperCase())		 
 		 {
 			flag =1;
-			alert("Zip and Cusine Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
-			var element=document.createElement("p");
+			var element=document.createElement("p");			
 			var rest_Name=document.createTextNode(rName);
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			var rest_Cuisine=document.createTextNode(rCuisine);
 			element.appendChild(rest_Name);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Zip);
-			element.appendChild(rest_Cuisine);
+			var br = document.createElement("br");
+			element.appendChild(br);
+			element.appendChild(rest_Cuisine);			
 			document.body.appendChild(element);
 			document.body.appendChild(x);
 			
@@ -176,20 +204,25 @@ function myFunction(xml) {
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
 			flag =1;
-			alert("Zip and Cusine and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
 			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
+			var rest_Name=document.createTextNode(rName);			
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);
 			var rest_Cuisine=document.createTextNode(rCuisine);
 			element.appendChild(rest_Name);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Addr);
+			var br = document.createElement("br");
+			element.appendChild(br);
 			element.appendChild(rest_Zip);
-			element.appendChild(rest_Cuisine);
+			var br = document.createElement("br");
+			element.appendChild(br);
+			element.appendChild(rest_Cuisine);			
 			document.body.appendChild(element);
 			document.body.appendChild(x);
 			
