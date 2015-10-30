@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+alert("entered display file");
+alert("url = " + document.location);
+//var params = formURL.split("?")[1].split("&");
+//alert("params = " + params);
+var dataZip= getParameterByName("zipcode");
+var dataCuisine= getParameterByName("cuisine");
+var dataName= getParameterByName("name");
+
+
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    myFunction(xhttp);
+    }
+}
+xhttp.open("GET", "restaurants.xml", true);
+xhttp.send();
+
+function getParameterByName(name) {
+	var formURL = document.location;
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(formURL);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function myFunction(xml) {		
+		
+	var xmlDoc = xml.responseXML;	
+	var restaurant = xmlDoc.getElementsByTagName("restaurant");
+	
+	 for(var i =0;i<restaurant.length;i++)
+	 {
+		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip)
+		 {
+			alert("Zip Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			document.body.appendChild(element);
+			
+		 }
+		 
+		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())
+		 {
+			alert("Name Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			element.appendChild(rest_Zip);
+			document.body.appendChild(element);
+			
+		 }
+	 	 
+	 }
+		
+}
+
+</script>
+
+</body>
+</html>
