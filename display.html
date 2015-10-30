@@ -32,25 +32,35 @@ function myFunction(xml) {
 		
 	var xmlDoc = xml.responseXML;	
 	var restaurant = xmlDoc.getElementsByTagName("restaurant");
-	
+	var flag=0;
+	var heading=document.createTextNode("Here are your favourite Restaurants!!");
+	document.body.appendChild(heading);
+	var x = document.createElement("STYLE");
+	var t = document.createTextNode("body {font: 20px verdana; font-weight: bold; color: black;}");
+	x.appendChild(t);
+	document.body.style.background = "#f3f3f3 url('images/food4.png') no-repeat right top";
 	 for(var i =0;i<restaurant.length;i++)
 	 {
 		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip && dataCuisine=="" && dataName=="")		 
 		 {
+			flag =1;
 			alert("Zip Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
-			var element=document.createElement("p");
-			var rest_Name=document.createTextNode(rName);
-			var rest_Addr=document.createTextNode(rAddress);
-			element.appendChild(rest_Name);
-			element.appendChild(rest_Addr);
-			document.body.appendChild(element);
 			
+			var element=document.createElement("p");			
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);			
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);			
+			document.body.appendChild(element);
+			document.body.appendChild(x);								
+	
 		 }
 		 
 		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase() && dataCuisine=="" && dataZip=="")
 		 {
+			flag =1;
 			alert("Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -68,6 +78,7 @@ function myFunction(xml) {
 		 
 		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase()==dataCuisine.toUpperCase() && dataZip=="" && dataName=="")
 		 {
+			flag =1;
 			alert("Cuisine Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -89,6 +100,7 @@ function myFunction(xml) {
 		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip &&
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
+			flag =1;
 			alert("Zip and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -109,6 +121,7 @@ function myFunction(xml) {
 		  if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue==dataCuisine &&
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
+			flag =1;
 			alert("Cusine and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -130,6 +143,7 @@ function myFunction(xml) {
 		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue==dataCuisine &&
 		  restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase()==dataZip.toUpperCase())		 
 		 {
+			flag =1;
 			alert("Zip and Cusine Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -152,6 +166,7 @@ function myFunction(xml) {
 		  restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase()==dataZip.toUpperCase() &&
 		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
 		 {
+			flag =1;
 			alert("Zip and Cusine and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
@@ -168,6 +183,11 @@ function myFunction(xml) {
 			element.appendChild(rest_Cuisine);
 			document.body.appendChild(element);
 			
+		 }
+		 
+		 if(flag ==0)
+		 {
+		 alert("Search cireteria could not be found in the database");
 		 }
 		 
 	 	 
