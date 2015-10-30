@@ -18,10 +18,18 @@
                         <td><input class ="inputStyle" type="text" id="zipcode" placeholder="Enter zip code of the restaurant area" ></td>                        
                       </tr>
                       <tr>
-                        <td><input class ="inputStyle" type="text" id="cuisine" placeholder="Enter the Cusine"></td>                        
+                        <td><select class ="inputStyle"id="cuisine">
+						<option value="" disabled selected>Select Cuisine</option>
+						<option value="Mexican">Mexican</option>
+						<option value="Indian">Indian</option>
+						<option value="Chinese">Chinese</option>
+						<option value="Italian">Italian</option>
+						<option value="Thai">Thai</option>
+						<option value="Japanese">Japanese</option>
+						</td>                        
                       </tr>
                       <tr>
-                        <td><input class ="inputStyle" type="text" id="name" placeholder="Enter the name of the restaurant" ></td>                        
+                        <td><input class ="inputStyle" type="text" id="name" placeholder="Enter the name of the restaurant (optional)" ></td>                        
                       </tr>
                       <tr>
                         <td><input class ="buttonStyle" type="button" value="GO" onclick="submitForm()"></td>
