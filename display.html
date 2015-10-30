@@ -4,10 +4,8 @@
 
 
 <script>
-alert("entered display file");
-alert("url = " + document.location);
-//var params = formURL.split("?")[1].split("&");
-//alert("params = " + params);
+
+
 var dataZip= getParameterByName("zipcode");
 var dataCuisine= getParameterByName("cuisine");
 var dataName= getParameterByName("name");
@@ -37,7 +35,7 @@ function myFunction(xml) {
 	
 	 for(var i =0;i<restaurant.length;i++)
 	 {
-		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip)
+		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip && dataCuisine=="" && dataName=="")		 
 		 {
 			alert("Zip Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
@@ -51,7 +49,7 @@ function myFunction(xml) {
 			
 		 }
 		 
-		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())
+		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase() && dataCuisine=="" && dataZip=="")
 		 {
 			alert("Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
@@ -68,9 +66,93 @@ function myFunction(xml) {
 			
 		 }
 		 
-		  if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase()==dataCuisine.toUpperCase())
+		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase()==dataCuisine.toUpperCase() && dataZip=="" && dataName=="")
 		 {
 			alert("Cuisine Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
+			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);
+			var rest_Cuisine=document.createTextNode(rCuisine);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			element.appendChild(rest_Zip);
+			element.appendChild(rest_Cuisine);
+			document.body.appendChild(element);
+			
+		 }
+		 
+		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip &&
+		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
+		 {
+			alert("Zip and Name Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
+			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);
+			var rest_Cuisine=document.createTextNode(rCuisine);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			element.appendChild(rest_Zip);
+			element.appendChild(rest_Cuisine);
+			document.body.appendChild(element);
+			
+		 }
+		  if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue==dataCuisine &&
+		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
+		 {
+			alert("Cusine and Name Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
+			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);
+			var rest_Cuisine=document.createTextNode(rCuisine);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			element.appendChild(rest_Zip);
+			element.appendChild(rest_Cuisine);
+			document.body.appendChild(element);
+			
+		 }
+		 
+		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue==dataCuisine &&
+		  restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase()==dataZip.toUpperCase())		 
+		 {
+			alert("Zip and Cusine Match Found");
+			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
+			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
+			var rCuisine=restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+			var element=document.createElement("p");
+			var rest_Name=document.createTextNode(rName);
+			var rest_Addr=document.createTextNode(rAddress);
+			var rest_Zip=document.createTextNode(rZipCode);
+			var rest_Cuisine=document.createTextNode(rCuisine);
+			element.appendChild(rest_Name);
+			element.appendChild(rest_Addr);
+			element.appendChild(rest_Zip);
+			element.appendChild(rest_Cuisine);
+			document.body.appendChild(element);
+			
+		 }
+		 
+		 if(restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue==dataCuisine &&
+		  restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase()==dataZip.toUpperCase() &&
+		  restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase())		 
+		 {
+			alert("Zip and Cusine and Name Match Found");
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
