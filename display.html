@@ -42,7 +42,7 @@ function myFunction(xml) {
 	
 	
 	
-	document.body.style.background = "#f3f3f3 url('images/food4.png') no-repeat right top";
+	document.body.style.background = "#f3f3f3 url('images/food2.jpg') no-repeat right top";
 	 for(var i =0;i<restaurant.length;i++)
 	 {
 		 if(restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue==dataZip && dataCuisine=="" && dataName=="")		 
@@ -51,7 +51,10 @@ function myFunction(xml) {
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;	
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;					
-			var element=document.createElement("p");			
+			var element=document.createElement("p");	
+			var att = document.createAttribute("class");
+			att.value="nameStyle";
+			element.setAttributeNode(att);
 			var rest_Name=document.createTextNode(rName);
 			var rest_Addr=document.createTextNode(rAddress);
 			var rest_Zip=document.createTextNode(rZipCode);				
