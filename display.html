@@ -335,6 +335,22 @@ function myFunction(xml) {
 	 button.addEventListener("click",function(){window.location="index.html";});
 	 }
 	 
+	 if(!dataCuisine=="" && !dataName=="" && !dataZip=="" && flagSubmit==0)
+	 {
+	 var element=document.createElement("p");
+	 var invalidData= document.createTextNode("Invalid data entered");
+	 element.appendChild(invalidData);
+	 
+	 
+	 document.body.appendChild(element);
+	 document.body.appendChild(x);
+	 var button= document.createElement("Button");
+	 var buttonValue= document.createTextNode("Click here to go back!");
+	 
+	 button.appendChild(buttonValue);
+	 document.body.appendChild(button);
+	 button.addEventListener("click",function(){window.location="index.html";});
+	 }
 	 //tablearea.appendChild(table);
 
 	
