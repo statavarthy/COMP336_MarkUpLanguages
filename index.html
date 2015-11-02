@@ -15,8 +15,15 @@
                 <form name="myform">
                   <table>
                       <tr>
-                        <td><input class ="inputStyle" type="text" id="zipcode" placeholder="Enter zip code of the restaurant area" ></td>                        
+                        <td>
+							<input class ="inputStyle" type="text" id="zipcode" placeholder="Enter zip code of the restaurant area" >
+						</td>                        
                       </tr>
+					  <tr>
+						<td>
+							<label for="zipcode" id="ziplabel" style="color:red;display:none">No restaurant for this Zip</label>
+						</td>
+					  </tr>
                       <tr>
                         <td><select required class ="inputStyle" id="cuisine">
 						<option value="" disabled selected>Select Cuisine</option>
@@ -31,6 +38,11 @@
                       <tr>
                         <td><input class ="inputStyle" type="text" id="name" placeholder="Enter the name of the restaurant (optional)" ></td>                        
                       </tr>
+					  <tr>
+						<td>
+							<label for="name" id="namelabel" style="color:red;display:none">No restaurant with this Name.</label>
+						</td>
+					  </tr>
                       <tr>
                         <td><input class ="buttonStyle" type="button" value="GO" onclick="submitForm()"></td>
                       </tr>
