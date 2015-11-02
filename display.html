@@ -31,7 +31,9 @@ function myFunction(xml) {
 		
 	var xmlDoc = xml.responseXML;	
 	var restaurant = xmlDoc.getElementsByTagName("restaurant");
-	var flag=0;
+	var flagZip=0;
+	var flagName=0;
+	var flagSubmit=0;
 	var h = document.createElement("H1") 
 	var heading=document.createTextNode("Here are your favourite Restaurants!!");
 	h.appendChild(heading);
@@ -65,7 +67,7 @@ function myFunction(xml) {
 			
 	
 			
-			flag =1;
+			flagZip =1;
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;	
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;	
@@ -113,7 +115,7 @@ function myFunction(xml) {
 		 if(restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase()==dataName.toUpperCase() && dataCuisine=="" && dataZip=="")
 		 {
 			
-			flag =1;
+			flagName =1;
 			var rName=restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
 			var rAddress=restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
 			var rZipCode=restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
@@ -276,19 +278,61 @@ function myFunction(xml) {
 		 
 	 	 
 	 }
-	 if (dataCuisine=="" && dataName=="" && flag==0)
+	 if (dataCuisine=="" && dataName=="" && flagZip==0 && !dataZip=="")
 	 {
 	 var element=document.createElement("p");
-	 var output= document.createTextNode("zipcode not found");
-	 element.appendChild(output);
+	 var outputLeft= document.createTextNode("Entered zipcode: ");
+	 element.appendChild(outputLeft);
+	 var displayZip= document.createTextNode(dataZip);
+	 element.appendChild(displayZip);
+	 var outputRight= document.createTextNode(" not found in our database. Try new!");
+	 element.appendChild(outputRight);
 	 document.body.appendChild(element);
 	 document.body.appendChild(x);
 	 var button= document.createElement("Button");
-	 var buttonValue= document.createTextNode("SUBMIT");
+	 var buttonValue= document.createTextNode("Click here to go back!");
 	 
 	 button.appendChild(buttonValue);
 	 document.body.appendChild(button);
+	 button.addEventListener("click",function(){window.location="index.html";});
 	 
+	 }
+	 
+	 if(dataCuisine=="" && flagName==0 && !dataName=="")
+	 {
+	 var element=document.createElement("p");
+	 var outputLeft= document.createTextNode("Restaurant with the Name: ");
+	 element.appendChild(outputLeft);
+	 var displayName= document.createTextNode(dataName);
+	 element.appendChild(displayName);
+	 var outputRight= document.createTextNode(" not found in our database");
+	 element.appendChild(outputRight);
+	 
+	 document.body.appendChild(element);
+	 document.body.appendChild(x);
+	 var button= document.createElement("Button");
+	 var buttonValue= document.createTextNode("Click here to go back!");
+	 
+	 button.appendChild(buttonValue);
+	 document.body.appendChild(button);
+	 button.addEventListener("click",function(){window.location="index.html";});
+	 }
+	 
+	 if(dataCuisine=="" && dataName=="" && dataZip=="" && flagSubmit==0)
+	 {
+	 var element=document.createElement("p");
+	 var emptySubmit= document.createTextNode("Provide valid input values");
+	 element.appendChild(emptySubmit);
+	 
+	 
+	 document.body.appendChild(element);
+	 document.body.appendChild(x);
+	 var button= document.createElement("Button");
+	 var buttonValue= document.createTextNode("Click here to go back!");
+	 
+	 button.appendChild(buttonValue);
+	 document.body.appendChild(button);
+	 button.addEventListener("click",function(){window.location="index.html";});
 	 }
 	 
 	 //tablearea.appendChild(table);
