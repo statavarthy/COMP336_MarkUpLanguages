@@ -36,21 +36,32 @@
             var flagName = 0;
             var flagSubmit = 0;
             var h = document.createElement("H1")
+			var hs = document.createTextNode("H1{text-align:center;}");
+			
             var heading = document.createTextNode("Here are your favourite Restaurants!!");
             h.appendChild(heading);
             document.body.appendChild(h);
             var x = document.createElement("STYLE");
             var t = document.createTextNode("body {font: 15px verdana; font-weight: bold; color: black;}");
             x.appendChild(t);
-            //var tablearea = document.getElementById('tablearea'),
+				//var tablearea = document.createElement("tablearea");
+				//var ta = document.createTextNode("tablearea{ vertical-align: middle;}");
             var table = document.createElement("TABLE");
-            var ts = document.createTextNode("table,th,td{border: 1px solid black;}");
+			var tableattr = document.createAttribute("align");
+			tableattr.value="center";
+			table.setAttributeNode(tableattr);
+			//var tableattrvalue = document.createTextNode("center");
+			//tableattr.appendChild(tableattrvalue);
+			//table.appendChild(tableattr);
+            var ts = document.createTextNode("table,th,td{ table-align:center; width:50%; margin-top:50px;}");
             x.appendChild(ts);
+			x.appendChild(hs);
+			//x.appendChild(ta);
 
             //document.getElementById("TABLE").style.borderStyle = "solid"; 
 
 
-            document.body.style.background = "#f3f3f3 url('images/food2.jpg') no-repeat right top";
+            //document.body.style.background = "#f3f3f3 url('images/food2.jpg') no-repeat right top";
 
             for (var i = 0; i < restaurant.length; i++) {
                 var tr = document.createElement('tr');
@@ -64,7 +75,7 @@
 
                 if (restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue == dataZip && dataCuisine == "" && dataName == "") {
 
-
+					document.body.style.background = "#f3f3f3 url('images/food2.jpg') no-repeat right top";
 
                     flagZip = 1;
                     var rName = restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
@@ -97,14 +108,14 @@
                     tr.appendChild(td3);
                     tr.appendChild(td4);
                     table.appendChild(tr);
-
+						//ta.appendChild(table);
                     //document.body.appendChild(element);
                     //document.body.appendChild(x);	
 
                     document.body.appendChild(table);
                     document.body.appendChild(x);
 
-
+					
 
 
                 }
@@ -134,7 +145,32 @@
                 }
 
                 if (restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase() == dataCuisine.toUpperCase() && dataZip == "" && dataName == "") {
-                    flag = 1;
+                    
+					if(dataCuisine=="Indian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Indian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Italian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Italian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Mexican")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Mexican.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Chinese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Chinese.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Thai")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Thai.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Japanese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Japenese.jpg') no-repeat right top";
+					}
+					flag = 1;
                     var rName = restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
@@ -187,7 +223,32 @@
                 }
                 if (restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue == dataCuisine &&
                     restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue.toUpperCase() == dataName.toUpperCase()) {
-                    flag = 1;
+                   
+					if(dataCuisine=="Indian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Indian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Italian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Italian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Mexican")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Mexican.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Chinese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Chinese.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Thai")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Thai.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Japanese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Japenese.jpg') no-repeat right top";
+					}
+					flag = 1;
                     var rName = restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
@@ -214,7 +275,34 @@
 
                 if (restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue == dataCuisine &&
                     restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue.toUpperCase() == dataZip.toUpperCase()) {
-                    flag = 1;
+                    
+					if(dataCuisine=="Indian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Indian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Italian")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Italian.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Mexican")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Mexican.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Chinese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Chinese.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Thai")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Thai.jpg') no-repeat right top";
+					}
+					if(dataCuisine=="Japanese")
+					{
+					document.body.style.background = "#f3f3f3 url('images/Japenese.jpg') no-repeat right top";
+					}
+					
+					
+					flag = 1;
                     var rName = restaurant[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue;
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
