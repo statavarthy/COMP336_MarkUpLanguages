@@ -5,42 +5,49 @@
 		<Address>159 N WABASH AVE </Address>
 		<Cuisine>Mexican</Cuisine>
 		<Zip>60601</Zip>
+		<url>www.google.com</url>
 	</restaurant>	
 	<restaurant>
 		<Name>Mariano</Name>
 		<Address>200 W WABASH AVE </Address>
 		<Cuisine>Indian</Cuisine>
 		<Zip>60602</Zip>
+		<url>www.google.com</url>
 	</restaurant>	
 	<restaurant>
 		<Name>SUBWAY</Name>
 		<Address>201 N CLARK ST</Address>
 		<Cuisine>Chinese</Cuisine>
 		<Zip>60603</Zip>
+		<url>www.google.com</url>
 	</restaurant>
 	<restaurant>
 		<Name>STEAK &amp; EGGER</Name>
 		<Address>1174 W CERMAK RD </Address>
 		<Cuisine>Italian</Cuisine>
 		<Zip>60608</Zip>
+		<url>www.google.com</url>
 	</restaurant>
 	<restaurant>
 		<Name>HOPE COFFEEHOUSE</Name>
 		<Address>2431 W ROOSEVELT RD </Address>
-		<Zip>60608</Zip>
 		<Cuisine>Thai</Cuisine>
+		<Zip>60608</Zip>
+		<url>www.google.com</url>
 	</restaurant>
 	<restaurant>
-		<Name>CHIPOTLE MEXICAN GRILL</Name>
+		<Name>CHIPOTLE GRILL</Name>
 		<Address>316 N MICHIGAN AVE </Address>
 		<Zip>60601</Zip>
 		<Cuisine>MEXICAN</Cuisine>
+			<url>www.google.com</url>
 	</restaurant>
 	<restaurant>
 		<Name>Sunshine Cafe</Name>
 		<Address>5449 N Clark St</Address>
 		<Zip>60640</Zip>
 		<Cuisine>Japanese</Cuisine>
+			<url>www.google.com</url>
 	</restaurant>
 </restaurants>	
 

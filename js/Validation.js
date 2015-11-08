@@ -11,6 +11,7 @@ function submitForm(){
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				var dataExistZip = validateZip(xhttp, zip);
 				var dataExistName = validateName(xhttp, name);
+										//var dataExistCuisine = validateCuisine(xhttp,cuisine);
 				if(dataExistZip && dataExistName) {
 					window.location = "display.html?zipcode="+zip+"&cuisine="+cuisine+"&name="+name;
 					document.myform.method = "GET";

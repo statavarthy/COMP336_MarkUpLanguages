@@ -35,15 +35,15 @@
             var flagZip = 0;
             var flagName = 0;
             var flagSubmit = 0;
-            var h = document.createElement("H1")
-			var hs = document.createTextNode("H1{text-align:center;}");
+            var h = document.createElement("p")
+			var hs = document.createTextNode("p{text-align:center; font-family:Constantia; font-size:35px; font-weight:bold; }");
 			
             var heading = document.createTextNode("Here are your favourite Restaurants!!");
             h.appendChild(heading);
             document.body.appendChild(h);
             var x = document.createElement("STYLE");
-            var t = document.createTextNode("body {font: 15px verdana; font-weight: bold; color: black;}");
-            x.appendChild(t);
+            //var t = document.createTextNode("body {font: 15px verdana; font-weight: bold; color: black;}");
+            //x.appendChild(t);
 				//var tablearea = document.createElement("tablearea");
 				//var ta = document.createTextNode("tablearea{ vertical-align: middle;}");
             var table = document.createElement("TABLE");
@@ -53,7 +53,7 @@
 			//var tableattrvalue = document.createTextNode("center");
 			//tableattr.appendChild(tableattrvalue);
 			//table.appendChild(tableattr);
-            var ts = document.createTextNode("table,th,td{ table-align:center; width:40%; margin-top:50px;}");
+            var ts = document.createTextNode("table,th,td{ table-align:center; width:40%; margin-top:50px; font-size:15px; font-family:Constantia;  color: black;}");
             x.appendChild(ts);
 			x.appendChild(hs);
 			//x.appendChild(ta);
@@ -65,18 +65,19 @@
 
             for (var i = 0; i < restaurant.length; i++) {
                 var tr = document.createElement('tr');
+				var tr_url = document.createElement('tr');
                 var td1 = document.createElement('td');
                 var td2 = document.createElement('td');
                 var td3 = document.createElement('td');
                 var td4 = document.createElement('td');
-
+				var td5 = document.createElement('td');
 
 
 
                 if (restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue == dataZip && dataCuisine == "" && dataName == "") {
 
-					document.body.style.background = "#f3f3f3 url('images/watermark.png') repeat right top";
-					//document.body.style.background = "#f3f3f3 url('images/vertical.jpg')  no-repeat ";
+					document.body.style.background = "#f3f3f3 url('images/main.jpg') no-repeat right top";
+					//document.body.style.background = "#f3f3f3 url('images/vertical.jpg')  no-repeat  right top";
 					//var watermark = document.createElement("watermark");
 					//var watermarke_content = document.createTextNode("FOOD GLOBE");
 					//watermark.appendChild(watermarke_content);
@@ -87,6 +88,7 @@
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+					var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
                     //var element=document.createElement("p");	
                     //var att = document.createAttribute("class");
                     //att.value="nameStyle";
@@ -95,6 +97,7 @@
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
+					var rest_Url = document.createTextNode(rUrl);
                     //element.appendChild(rest_Name);
                     td1.appendChild(rest_Name);
                     //var br = document.createElement("br");				
@@ -108,18 +111,31 @@
 
                     //element.appendChild(rest_Cuisine);	
                     td4.appendChild(rest_Cuisine);
+					
+					//var a =  document.createElement("a");
+					//a.setAttribute("href", rest_Url);
+					//var attrUrl = document.createAttribute("href");
+					//attrUrl.value = "rest_Url";
+					//a.setAttributeNode(attrUrl);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
                     tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						//ta.appendChild(table);
                     //document.body.appendChild(element);
                     //document.body.appendChild(x);	
 
                     document.body.appendChild(table);
                     document.body.appendChild(x);
-document.body.appendChild(watermark);
+					
+
 					
 
 
@@ -135,12 +151,13 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
 					var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
-                    
+                    var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
 					//var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
+					var rest_Url = document.createTextNode(rUrl);
 					//element.appendChild(rest_Name);
                     //var br = document.createElement("br");
                     //element.appendChild(br);
@@ -159,11 +176,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
@@ -203,11 +226,13 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
-                    //var element = document.createElement("p");
+                    var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
+					//var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
+var rest_Url = document.createTextNode(rUrl);
                     td1.appendChild(rest_Name);
                     	
                     td2.appendChild(rest_Addr);
@@ -216,11 +241,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
@@ -238,11 +269,13 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
-                    var element = document.createElement("p");
+                   var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
+				   var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
+					var rest_Url = document.createTextNode(rUrl);
                    td1.appendChild(rest_Name);
                     	
                     td2.appendChild(rest_Addr);
@@ -251,11 +284,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
@@ -295,11 +334,13 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
-                    var element = document.createElement("p");
+                    var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
+					var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
+					var rest_Url = document.createTextNode(rUrl);
                    td1.appendChild(rest_Name);
                     	
                     td2.appendChild(rest_Addr);
@@ -308,11 +349,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
@@ -353,12 +400,15 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+					var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue; 
                     var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
-                    td1.appendChild(rest_Name);
+ 
+var rest_Url = document.createTextNode(rUrl);                 
+				   td1.appendChild(rest_Name);
                     	
                     td2.appendChild(rest_Addr);
                     
@@ -366,11 +416,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
@@ -414,12 +470,15 @@ document.body.appendChild(watermark);
                     var rAddress = restaurant[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue;
                     var rZipCode = restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue;
                     var rCuisine = restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue;
+					var rUrl = restaurant[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
                     //var element = document.createElement("p");
                     var rest_Name = document.createTextNode(rName);
                     var rest_Addr = document.createTextNode(rAddress);
                     var rest_Zip = document.createTextNode(rZipCode);
                     var rest_Cuisine = document.createTextNode(rCuisine);
-                    //element.appendChild(rest_Name);
+                    
+					var rest_Url = document.createTextNode(rUrl); 
+					//element.appendChild(rest_Name);
                     td1.appendChild(rest_Name);
                     	
                     td2.appendChild(rest_Addr);
@@ -428,11 +487,17 @@ document.body.appendChild(watermark);
 
                     td4.appendChild(rest_Cuisine);
                     
-					tr.appendChild(td1);
+					var Website = document.createTextNode("Website: ");
+					td5.appendChild(Website);
+					td5.appendChild(rest_Url);
+					
+                    tr.appendChild(td1);
                     tr.appendChild(td2);
                     tr.appendChild(td3);
                     tr.appendChild(td4);
+					tr_url.appendChild(td5);
                     table.appendChild(tr);
+					table.appendChild(tr_url);
 						
 
                     document.body.appendChild(table);
