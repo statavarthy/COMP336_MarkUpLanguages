@@ -11,8 +11,9 @@ function submitForm(){
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				var dataExistZip = validateZip(xhttp, zip);
 				var dataExistName = validateName(xhttp, name);
+				var dataExistZipCuisine = validateZipCuisine(xhttp,zip,cuisine);
 										//var dataExistCuisine = validateCuisine(xhttp,cuisine);
-				if(dataExistZip && dataExistName) {
+				if(dataExistZip && dataExistName && dataExistZipCuisine) {
 					window.location = "display.html?zipcode="+zip+"&cuisine="+cuisine+"&name="+name;
 					document.myform.method = "GET";
 				}
@@ -69,5 +70,24 @@ function validateName(xml,name) {
 	return true;
 }
 
+
+function validateZipCuisine(xml,zip,cuisine) {
+	if(zip != '' && cuisine!='') {
+		var xmlDoc = xml.responseXML;
+		var restaurant = xmlDoc.getElementsByTagName("restaurant");
+		for (var i=0; i<restaurant.length; i++)
+		{
+			if (restaurant[i].getElementsByTagName("Zip")[0].childNodes[0].nodeValue == zip && restaurant[i].getElementsByTagName("Cuisine")[0].childNodes[0].nodeValue.toUpperCase() == cuisine.toUpperCase())
+			{
+				return true;
+			}
+			
+		}
+		var cuisinelabelObject = document.getElementById("cuisinelabel");
+		cuisinelabelObject.style.display="block";
+		return false;
+	}
+	return true;
+}
 
 

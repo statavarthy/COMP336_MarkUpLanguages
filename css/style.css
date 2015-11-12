@@ -1,3 +1,7 @@
+body {
+	margin-left: 0px;
+    margin-right: 0px;
+}
 select:required:invalid{
 	color:gray;
 	
@@ -84,3 +88,64 @@ option{
       margin-left: auto;
       margin-right:auto;
     }
+	
+	#header{
+	height:60px;
+	width: 100%;
+	margin-left: auto;
+    margin-right:auto;
+	
+	border:1px solid transparent;
+	background-color:orange;
+	border-color:red;
+		margin-top:-35px;
+border-top-width:0px;
+border-bottom-width:2px;
+border-left-width:0px;
+border-right-width:0px;
+
+
+
+	}
+
+	
+	#main{
+		margin-top:35px;
+	}
+#header p{
+	    top: 15%;
+    position: relative;
+	text-align:center; font-family:Constantia; font-size:35px; font-weight:bold; color:white;  
+}
+
+#left{
+	float: left;
+	width: 20%;
+	height: 100vh;
+	position: fixed;
+	top: 50px;
+    left: 0px;
+	z-index: 800;
+}
+#container{
+	top: 60px;
+	width: 60%;
+	float: left;
+	left: 20%;
+	    position: relative;
+}
+#right{
+	z-index: 800;
+	float:right;
+	top: 50px;
+	width: 20%;
+	height: 100vh;
+	position: fixed;
+    right: 0px;
+}
+#headercont{
+	position: fixed;
+    top: 0px;
+    width: 100%;
+	z-index: 999;
+}
