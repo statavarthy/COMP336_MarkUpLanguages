@@ -107,7 +107,8 @@ border-right-width:0px;
 
 
 	}
-
+	
+	
 	
 	#main{
 		margin-top:35px;
@@ -144,8 +145,12 @@ border-right-width:0px;
     right: 0px;
 }
 #headercont{
+	font-family:Constantia; font-size:18px; font-weight:bold; color:white;
+	background-color:orange;
 	position: fixed;
     top: 0px;
     width: 100%;
 	z-index: 999;
 }
+
+#headercont a{color:white;}
